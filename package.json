@@ -1,20 +1,22 @@
 {
     "devDependencies": {
-        "@symfony/webpack-encore": "^0.28.0",
-        "autocomplete.js": "^0.36.0",
-        "autoprefixer": "^9.5.1",
-        "bootstrap": "^4.3.1",
+        "@symfony/webpack-encore": "^4.4.0",
+        "autocomplete.js": "^0.38.1",
+        "autoprefixer": "^10.4.16",
+        "bootstrap": "^5.3.2",
         "core-js": "^3.0.0",
-        "dropzone": "^5.5.1",
+        "dropzone": "^6.0.0-beta.2",
+        "file-loader": "^6.0.0",
         "font-awesome": "^4.7.0",
         "foundation-emails": "^2.2.1",
         "jquery": "^3.4.0",
         "popper.js": "^1.15.0",
-        "postcss-loader": "^3.0.0",
-        "regenerator-runtime": "^0.13.2",
+        "postcss-loader": "^7.3.3",
+        "regenerator-runtime": "^0.14.0",
         "sass": "^1.29.0",
-        "sass-loader": "^7.0.1",
+        "sass-loader": "^13.3.2",
         "sortablejs": "^1.8.4",
+        "webpack-cli": "^5.1.4",
         "webpack-notifier": "^1.6.0"
     },
     "license": "UNLICENSED",
@@ -27,5 +29,11 @@
     },
     "browserslist": [
         "> .05%"
-    ]
+    ],
+    "dependencies": {
+        "@babel/core": "^7.23.0",
+        "@babel/preset-env": "^7.22.20",
+        "@popperjs/core": "^2.11.8",
+        "webpack": "^5.88.2"
+    }
 }
