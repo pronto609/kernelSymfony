@@ -18,9 +18,12 @@ class ArticleController extends AbstractController
      */
     private $isDebug;
 
-    public function __construct(bool $isDebug)
-    {
+    public function __construct(
+        bool $isDebug,
+        private readonly LoggerInterface $logger
+    ) {
         $this->isDebug = $isDebug;
+        $this->logger->info('Controller instantiated!');
     }
 
     /**

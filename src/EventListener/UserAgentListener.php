@@ -4,6 +4,7 @@ namespace App\EventListener;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\Mailer\Event\MessageEvent;
 use Symfony\Component\Mime\Address;
@@ -26,6 +27,7 @@ class UserAgentListener implements EventSubscriberInterface
 
     public function onKernelRequest(RequestEvent $event)
     {
+//        $event->setResponse(new Response('It is my responce!'));
         $request = $event->getRequest();
 
         $userAgent = $request->headers->get('User-Agent');
