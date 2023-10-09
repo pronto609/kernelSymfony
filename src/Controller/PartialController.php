@@ -8,12 +8,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PartialController extends AbstractController
 {
-    public function trendingQuotes(): Response
+    public function trendingQuotes($isMac): Response
     {
         $quotes = $this->getTrendingQuotes();
 
         return $this->render('partial/trendingQuotes.html.twig', [
-            'quotes' => $quotes
+            'quotes' => $quotes,
+            'isMac' => $isMac
         ]);
     }
 

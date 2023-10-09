@@ -16,6 +16,11 @@ class IsMacArgimentValueResolver implements ArgumentValueResolverInterface
 
     public function resolve(Request $request, ArgumentMetadata $argument)
     {
+        if ($request->query->has('mac')) {
+            yield $request->query->getBoolean('mac');
+
+            return;
+        }
         $userAgent = $request->headers->get('User-Agent');
 
         yield str_contains($userAgent, 'Mac');
