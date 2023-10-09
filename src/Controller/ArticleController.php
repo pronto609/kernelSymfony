@@ -10,6 +10,7 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Routing\Exception\NoConfigurationException;
 
 class ArticleController extends AbstractController
 {
@@ -43,14 +44,15 @@ class ArticleController extends AbstractController
     /**
      * @Route("/news/{slug}", name="article_show")
      */
-    public function show($slug, SlackClient $slack, ArticleRepository $articleRepository)
+    public function show(Article $article, SlackClient $slack, ArticleRepository $articleRepository, $isMac)
     {
+        dump($isMac);
 //        return;
-        $article = $articleRepository->findOneBy(['slug' => $slug]);
+//        $article = $articleRepository->findOneBy(['slug' => $slug]);
 
-        if (!$article) {
-            throw $this->createNotFoundException();
-        }
+//        if (!$article) {
+//            throw $this->createNotFoundException();
+//        }
 
         if ($article->getSlug() === 'khaaaaaan') {
             $slack->sendMessage('Kahn', 'Ah, Kirk, my old friend...');

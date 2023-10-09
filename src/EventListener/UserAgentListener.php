@@ -29,12 +29,20 @@ class UserAgentListener implements EventSubscriberInterface
     {
 //        $event->setResponse(new Response('It is my responce!'));
         $request = $event->getRequest();
+/*
+        $request->attributes->set('_controller', function ($slug = null) {
+//            dd($slug);
+
+            return new Response('I just took over the controller!');
+        });*/
 
         $userAgent = $request->headers->get('User-Agent');
         $this->logger->info(
             sprintf('The User-Agent is %s', $userAgent)
         );
 
+//        $isMac = strpos($userAgent, 'Mac') !== false;
+//        $request->attributes->set('isMac', $isMac);
     }
 
 }
